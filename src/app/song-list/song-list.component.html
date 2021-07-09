@@ -1,0 +1,33 @@
+<div class="bg-light p-3 rounded-lg mb-3">
+    <h1 class="display-4 text-center">My Song List</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-song-list-form></app-song-list-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-striped mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>Song Name</th>
+                    <th>Artist</th>
+                    <th>Rating</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of service.list">
+                    <td (click)="populateForm(s)">{{s.songName}}</td>
+                    <td (click)="populateForm(s)">{{s.artist}}</td>
+                    <td (click)="populateForm(s)">{{s.rating}}</td>
+                    <td (click)="populateForm(s)">{{s.categoryId}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(s.id)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

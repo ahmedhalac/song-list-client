@@ -2,24 +2,24 @@
     <input type="hidden" name="id" [value]="service.songData.id">
     <div class="form-group">
         <label>SONG NAME</label>
-        <input class="form-control form-control-lg" placeholder="Song name" name="songName" #songName="ngModel"
+        <input class="form-control" placeholder="Song name" name="songName" #songName="ngModel"
             [(ngModel)]="service.songData.songName" required [class.invalid]="songName.invalid &&
              songName.touched">
     </div>
     <div class="form-group">
         <label>ARTIST</label>
-        <input class="form-control form-control-lg" placeholder="Artist name" name="artist" #artist="ngModel"
+        <input class="form-control" placeholder="Artist name" name="artist" #artist="ngModel"
             [(ngModel)]="service.songData.artist" required>
     </div>
     <div class="form-group">
         <label>URL</label>
-        <input class="form-control form-control-lg" placeholder="Url" name="url" #url="ngModel"
+        <input class="form-control" placeholder="Url" name="url" #url="ngModel"
             [(ngModel)]="service.songData.url" required>
     </div>
 
     <div class="form-group col-md-6">
         <label>RATING</label>
-        <select name="rating" id="rating" class="form-control form-control-lg form-select" #rating="ngModel"
+        <select name="rating" id="rating" class="form-control form-select" #rating="ngModel"
             [(ngModel)]="service.songData.rating">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group col-md-6">
         <label>CATEGORY</label>
-        <select name="category" id="category" class="form-control form-control-lg form-select" #category="ngModel"
+        <select name="category" id="category" class="form-control form-select" #category="ngModel"
             [(ngModel)]="service.songData.categoryId">
             <option *ngFor="let c of serviceCateg.list" [value]="c.categoryId">{{c.name}}</option>
         </select>
@@ -44,6 +44,6 @@
     </div>
 
     <div class="form-group">
-        <button class="form-control btn btn-success btn-lg mt-3" type="submit" [disabled]="form.invalid">SUBMIT</button>
+        <button class="btn btn-success mt-3" type="submit" [disabled]="form.invalid">SUBMIT</button>
     </div>
 </form>

@@ -32,9 +32,7 @@
         <label>CATEGORY</label>
         <select name="category" id="category" class="form-control form-control-lg form-select" #category="ngModel"
             [(ngModel)]="service.songData.categoryId">
-            <!--DOBAVIT SVE LISTE PJESAMA I MAPIRAT-->
-            <option value="1">1</option>
-            <option value="2">2</option>
+            <option *ngFor="let c of serviceCateg.list" [value]="c.categoryId">{{c.name}}</option>
         </select>
     </div>
     <div class="form-check mt-3">
@@ -46,6 +44,6 @@
     </div>
 
     <div class="form-group">
-        <button class="form-control btn btn-info btn-lg mt-3" type="submit" [disabled]="form.invalid">SUBMIT</button>
+        <button class="form-control btn btn-success btn-lg mt-3" type="submit" [disabled]="form.invalid">SUBMIT</button>
     </div>
 </form>

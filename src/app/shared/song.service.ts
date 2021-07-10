@@ -18,10 +18,10 @@ export class SongService {
   }
 
   updateSong() {
+    this.songData.updatedAt = new Date();
     return this.http.put(`${this.baseURL}/${this.songData.id}`, this.songData);
   }
 
-  //use async/await -> try
   getSongList() {
     this.http.get(this.baseURL)
     .toPromise()

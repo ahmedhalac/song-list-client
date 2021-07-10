@@ -3,6 +3,7 @@ import { SongService } from 'src/app/shared/song.service';
 import { NgForm } from '@angular/forms';
 import { Song } from 'src/app/shared/song.model';
 import { ToastrService } from 'ngx-toastr';
+import { CategoryService } from 'src/app/shared/category.service';
 
 @Component({
   selector: 'app-song-list-form',
@@ -12,10 +13,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SongListFormComponent implements OnInit {
 
-  constructor(public service: SongService,
+  constructor(public service: SongService, public serviceCateg: CategoryService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    this.serviceCateg.getCategories();
   }
 
   onSubmit(form: NgForm) {
